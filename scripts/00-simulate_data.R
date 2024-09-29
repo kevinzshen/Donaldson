@@ -1,5 +1,5 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of TTC streetcar delays, including the streetcar line, date and time (year, month, hour), location
+# Purpose: Simulates a dataset of TTC streetcar delays, including the streetcar line, date and time (year, month, hour), location, and reason.
 # Author: Kevin Shen
 # Date: 28 September 2024
 # Contact: kevinz.shen@mail.utoronto.ca
