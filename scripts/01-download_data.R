@@ -1,7 +1,17 @@
+#### Preamble ####
+# Purpose: Simulates a dataset of TTC streetcar delays, including the streetcar line, date and time (year, month, hour), location
+# Author: Kevin Shen
+# Date: 28 September 2024
+# Contact: kevinz.shen@mail.utoronto.ca
+# License: MIT
+# Pre-requisites: The `tidyverse` package must be installed
+
+#### Workspace setup ####
 library(opendatatoronto)
 library(tidyverse)
 set.seed(2620) # last 4 digits of student number used for seed
 
+#### Download data ####
 # Get package
 package <- show_package("b68cb71b-44a7-4394-97e2-5d2f41462a5d")
 

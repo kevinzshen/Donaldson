@@ -1,52 +1,50 @@
 #### Preamble ####
-# Purpose: Simulates a dataset of Australian electoral divisions, including the 
-  #state and party that won each division.
-# Author: Rohan Alexander
-# Date: 26 September 2024
-# Contact: rohan.alexander@utoronto.ca
+# Purpose: Simulates a dataset of TTC streetcar delays, including the streetcar line, date and time (year, month, hour), location
+# Author: Kevin Shen
+# Date: 28 September 2024
+# Contact: kevinz.shen@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: The `tidyverse` package must be installed
-# Any other information needed? Make sure you are in the `starter_folder` rproj
-
 
 #### Workspace setup ####
 library(tidyverse)
-set.seed(853)
-
+set.seed(2620) # Last four digits of student number used for seed
 
 #### Simulate data ####
-# State names
-states <- c(
-  "New South Wales",
-  "Victoria",
-  "Queensland",
-  "South Australia",
-  "Western Australia",
-  "Tasmania",
-  "Northern Territory",
-  "Australian Capital Territory"
-)
+# Set the number of random dates you want to generate
+num_rows <- 150
 
-# Political parties
-parties <- c("Labor", "Liberal", "Greens", "National", "Other")
-
-# Create a dataset by randomly assigning states and parties to divisions
-analysis_data <- tibble(
-  division = paste("Division", 1:151),  # Add "Division" to make it a character
-  state = sample(
-    states,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.25, 0.25, 0.15, 0.1, 0.1, 0.1, 0.025, 0.025) # Rough state population distribution
-  ),
-  party = sample(
-    parties,
-    size = 151,
-    replace = TRUE,
-    prob = c(0.40, 0.40, 0.05, 0.1, 0.05) # Rough party distribution
+data <-
+  tibble(
+    year = 2022,
+    month = as.integer(runif(
+      n = num_rows,
+      min = 1,
+      max = 12
+    )),
+    hour = as.integer(runif(
+      n = num_rows,
+      min = 0,
+      max = 23
+    )),
+    delay_mins = as.integer(runif(
+      n = num_rows,
+      min = 1,
+      max = 120
+    )),
+    streetcar_line = sample(
+      c(301, 512, 504, 509, 511, 505, 510, 503),
+      size = num_rows, replace = TRUE
+    ),
+    location = sample(
+      c("ST CLAIR STATION", "BATHURST STATION", "SPADINA AND KING", "MUNRO AND GERRARD"),
+      size = num_rows, replace = True
+    ),
+    reason = sample(
+      c("Emergency Services", "Operations", "Cleaning - Unsanitary", "Security"), 
+      size = num_rows, replace = TRUE
+    )
   )
-)
 
-
-#### Save data ####
-write_csv(analysis_data, "data/00-simulated_data/simulated_data.csv")
+#### Write_csv
+write_csv(data, file = "data/simulated_data/simulated_streetcar_delay.csv")
