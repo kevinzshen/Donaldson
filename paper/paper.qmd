@@ -1,13 +1,12 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "2022 TTC Streetcar Delay Analysis"
+subtitle: "Where do TTC delays occur most frequently and why?"
 author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: [https://github.com/RohanAlexander/starter_folder](https://github.com/RohanAlexander/starter_folder)."
-date: today
+  - Kevin Shen
+thanks: "Code and data are available at: [https://github.com/kevinzshen/Donaldson](https://github.com/kevinzshen/Donaldson)."
+date: September 28, 2024
 date-format: long
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+abstract: "This paper examines the causes of TTC streetcar delays by inspecting the relationship between various factors such as date, delay time, location, streetcar line, and reason. In this paper our goal is to find where delays occur most frequently and what the causes are. Our paper hopes to provide analysis and help public transit officials make more informed decisions in the future when trying to improve the streetcar system."
 format: pdf
 number-sections: true
 bibliography: references.bib
@@ -25,9 +24,7 @@ library(palmerpenguins)
 
 # Introduction
 
-You can and should cross-reference sections and sub-sections. We use @citeR and @rohan.
-
-The remainder of this paper is structured as follows. @sec-data....
+The TTC is the largest transit authority located in Toronto, Ontario, Canada. The TTC is a critical mode of transport for many residents in the area and allows for travel across the various different parts of the Greater Toronto Area, GTA. However, like many public transportation services all over the world, the TTC struggles with delays in between stops, slowing down transport.
 
 
 
